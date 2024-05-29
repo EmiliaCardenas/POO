@@ -8,11 +8,12 @@ class Cliente{
   protected:
     string nombre_usuario, contrasena, info_direccion;
     int id_num;
+    int cantidad, precio;
 
   public:
-    Cliente(): nombre_usuario("Jisung"), contrasena("Lee_Minho"), info_direccion("Corea"), id_num(14092000){};
+    Cliente(): nombre_usuario(""), contrasena(""), info_direccion(""), id_num(){};
     Cliente(string _nom, string _contrasena, string _info, int _num);
-    void registrarse();
+    virtual void anadir_orden(); // Polimorfismo
 
     void setNom(string _nom);
     string getNom(){return nombre_usuario;}
@@ -29,6 +30,13 @@ Cliente::Cliente(string _nom, string _contrasena, string _info, int _num){
   contrasena = _contrasena;
   info_direccion = _info;
   id_num = _num;
+}
+
+void Cliente::anadir_orden(){
+  cout << "\nCuantos de este producto quieres? " << endl;
+  cin >> cantidad;
+  cout << "\nCuanto cuesta este producto? " << endl;
+  cin >> precio;
 }
 
 void Cliente::setNom(string _nom){
@@ -49,10 +57,9 @@ void Cliente::setNum (int _num){
 class Anime : public Cliente{
   private:
     string serie;
-    int cantidad, precio;
 
   public:
-    Anime(): Cliente("Jisung","Lee_Minho","Corea",14092000){};
+    Anime(): Cliente("","","",int()){};
     Anime (string _nom, string _contrasena, string _info, int _num):Cliente(_nom,_contrasena,_info,_num){
     }
     void anadir_orden();
@@ -71,10 +78,7 @@ class Anime : public Cliente{
 void Anime::anadir_orden(){
   cout << "\nQue producto quieres (mangas, figuras, llaveros, etc.)? " << endl;
   cin >> serie;
-  cout << "\nCuantos de este producto quieres? " << endl;
-  cin >> cantidad;
-  cout << "\nCuanto cuesta este producto? " << endl;
-  cin >> precio;
+  Cliente::anadir_orden();
 }
 
 void Anime::registrarse(){
@@ -104,10 +108,9 @@ void Anime::setPrecio (int _precio){
 class Kpop : public Cliente{
   private:
     string grupo;
-    int cantidad, precio;
 
   public:
-    Kpop(): Cliente("Jisung","Lee_Minho","Corea",14092000){};
+    Kpop(): Cliente("","","",int()){};
     Kpop (string _nom, string _contrasena, string _info, int _num):Cliente(_nom,_contrasena,_info,_num){
   }
     void anadir_orden();
@@ -126,10 +129,7 @@ class Kpop : public Cliente{
 void Kpop::anadir_orden(){
   cout << "\nQue producto quieres (Pcs, Albumes, Banners, etc.)? " << endl;
   cin >> grupo;
-  cout << "\nCuantos de este producto quieres? " << endl;
-  cin >> cantidad;
-  cout << "\nCuanto cuesta este producto? " << endl;
-  cin >> precio;
+  Cliente::anadir_orden();
 }
 
 void Kpop::registrarse(){
