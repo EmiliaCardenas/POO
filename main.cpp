@@ -4,22 +4,23 @@
 using namespace std;
 
 int main() {
-  Anime madoka{};
-  madoka.anadir_orden();
-  madoka.registrarse();
-  madoka.info_productos();
   Anime naruto("Emilia", "A01706807", "Mexico", 12125858);
   naruto.anadir_orden();
   naruto.registrarse();
   naruto.info_productos();
 
-  Kpop stray_kids{};
-  stray_kids.anadir_orden();
-  stray_kids.registrarse();
-  stray_kids.info_productos();
-  Anime ateez("Victoria", "A01708200", "Japon", 184752610);
+  Kpop ateez("Victoria", "A01708200", "Japon", 184752610);
   ateez.anadir_orden();
   ateez.registrarse();
   ateez.info_productos();
+
+  //Prueba Polimorfismo
+  Cliente *cliente = new Cliente();
+  cliente -> anadir_orden();
   
+  Cliente *anime = new Anime();
+  anime -> anadir_orden();
+
+  Cliente *kpop = new Kpop();
+  kpop -> anadir_orden();
 }
