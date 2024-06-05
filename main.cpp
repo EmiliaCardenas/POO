@@ -1,26 +1,24 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Cliente.h"
+#include "Orden.h"
+#include "Envioinfo.h"
+#include "Cuentafinal.h"
 using namespace std;
 
 int main() {
-  Anime naruto("Emilia", "A01706807", "Mexico", 12125858);
-  naruto.anadir_orden();
-  naruto.registrarse();
-  naruto.info_productos();
+  cout << "\n\n ------Todos los registros------" << endl;
+  Cuentafinal cliente;
+  cliente.registros_clientes();
+  cliente.ver_registros();
 
-  Kpop ateez("Victoria", "A01708200", "Japon", 184752610);
-  ateez.anadir_orden();
-  ateez.registrarse();
-  ateez.info_productos();
+  cout << "\n\n ------Imprimir registro de anime------" << endl;
+  cliente.ver_registros("Anime");
 
-  //Prueba Polimorfismo
-  Cliente *cliente = new Cliente();
-  cliente -> anadir_orden();
+  cout << "\n\n ------Imprimir registro de kpop------" << endl;
+  cliente.ver_registros("Kpop");
   
-  Cliente *anime = new Anime();
-  anime -> anadir_orden();
+  Envioinfo envio1(657493598,4,7,2024,37,20,"avión");
+  envio1.anadir_envio();
 
-  Cliente *kpop = new Kpop();
-  kpop -> anadir_orden();
 }
