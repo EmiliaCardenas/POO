@@ -42,25 +42,43 @@ void Orden::orden_final(){
 void Orden::setId(int _id){
   id_orden = _id;
 }
-
 void Orden::setDia(int _dia){
   fecha_dia = _dia;
 }
-
 void Orden::setMes(int _mes){
   fecha_mes = _mes;
 }
-
 void Orden::setAnio(int _anio){
   fecha_anio = _anio;
 }
-
 void Orden::setMin(int _min){
   fecha_min = _min;
 }
-
 void Orden::setHora(int _hora){
   fecha_hora = _hora;
+}
+
+class Envioinfo : public Orden{
+  private:
+    string metodo_envio;
+
+  public:
+    Envioinfo(): Orden(0,0,0,0,0,0), metodo_envio(""){};
+    Envioinfo(int _id, int _dia, int _mes, int _anio, int _min, int _hora, string _metodo): Orden(_id,_dia,_mes,_anio,_min,_hora), metodo_envio(_metodo){};
+
+    void anadir_envio();
+
+    void setMetodo(string _metodo);
+    string getMetodo(){return metodo_envio;}
+};
+
+void Envioinfo::anadir_envio(){
+  Orden::orden_final();
+  cout << "Metodo de envio: " << metodo_envio << endl;
+}
+
+void Envioinfo::setMetodo(string _metodo){
+  metodo_envio = _metodo;
 }
 
 #endif
