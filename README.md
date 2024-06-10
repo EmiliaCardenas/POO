@@ -2,6 +2,8 @@
 ## Emilia Cárdenas Lobatón - A01706807
 ### Tienda de Anime y Kpop
 
-El proyecto consite en hacer una tiendo de articulos de Anime y Kpop, los cuales se van a una orden de compra, que esa sujeta al Mombre y ID del usuario que esta comprando; manteniendose en la misma cuenta hasta salir y cambiar de usuario. Una vez este la orden, se transfiere la orden al área de envio, para al final generar una cuenta final y tener la orden completa con precio y envio para poder pagar al final.
+El proyecto consiste en hacer una tienda de artículos de Anime y Kpop, los cuales se van a una orden para generar un envío. Se basa en dos ramas que al final se juntan en el creador de objetos, una se basa en crear info del usuario junto con sus productos, mientras que la otra se basa en el envío. En el main se recorren los arreglos de ambas clases para poder mostrar los registros de compra y los envíos, los cuales pueden ser impresos por tipo de registro o tipo de envío. Estos son únicamente ejemplos de compras, nada de eso es necesario utilizarlo para ejecutar el programa, es solo un recurso demostrativo de su funcionamiento. 
 
-Lo que puede hacer que el codigo no llegue a funcionar sería que haysa problemas al hacer la herencia de atributos, que las composiciones nos esten bien planteadas. Otro problema puede ser tener funciones o atributos que no tengan un objetivo al final del proyecto, en si que sean incerbibles.
+Lo que puede hacer que el código no llegue a funcionar sería que haya problemas al hacer la herencia de atributos, o que a la hora de usar un objeto este no contenga todos los atributos necesarios. Otro problema puede ser tener funciones o atributos que no tengan un objetivo al final del proyecto, en sí que sean inservibles, ya que replit no compila atributos sin función en el programa.
+
+### Correcciones
