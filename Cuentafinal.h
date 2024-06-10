@@ -4,13 +4,12 @@
 #include<stdlib.h>
 #include "Cliente.h"
 #include "Orden.h"
-#include "Envioinfo.h"
 using namespace std;
 
 class Cuentafinal{
   private:
-    Cliente * cliente[20];
-    Envioinfo * envio[20];
+    Cliente * cliente[50];
+    Envioinfo * envio[50];
     int no;
 
   public:
@@ -48,6 +47,8 @@ void Cuentafinal::registro_envio(){
   no++;
   envio [no] = new Envioinfo (218432184,7,9,2027,6,18,"aereo");
   no++;
+  envio [no] = new Envioinfo (348914896,8,10,2028,24,3,"marino");
+  no++;
 }
 
 void Cuentafinal::ver_registros(){
@@ -77,5 +78,6 @@ void Cuentafinal::ver_envios(string metodo){
     }
   }
 }
+
 
 #endif
