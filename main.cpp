@@ -1,8 +1,16 @@
+
+/*
+Proyecto Tienda de anime y kpop
+Emilia Cárdenas Lobatón
+A01706807
+13/06/2024
+*/
+
+
 #include <iostream>
 #include <stdlib.h>
 #include "Cliente.h"
 #include "Orden.h"
-#include "Envioinfo.h"
 #include "Cuentafinal.h"
 using namespace std;
 
