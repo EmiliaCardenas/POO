@@ -16,16 +16,20 @@ de una tienda simulada de anime y kpop
 using namespace std;
 
 int main() {
-  int n, k;
+  int n, k, h;
   string m;
+
+  Cuentafinal cliente;
+  Cuentafinal envio1;
 
   cout << "Quieres ver los registros (Si/No)?" << endl;
   cin >> m;
 
   while (m == "Si"){
     cout << "\n\nBienvenidx al registro de compras, elige una opcion." << endl;
-    cout << "---Ver registros  1" << endl;
-    cout << "---Ver envios     2" << endl;
+    cout << "---Ver registros       1" << endl;
+    cout << "---Ver envios          2" << endl;
+    cout << "---Agregar registros   3" << endl;
     cout << "Cual es tu eleccion? " << endl;
     cin >> k;
 
@@ -36,7 +40,7 @@ int main() {
       cout << "Cuales registros quieres ver? " << endl;
       cin >> n;
 
-      Cuentafinal cliente;
+
       cliente.registros_clientes();
 
       if (n == 1) {
@@ -62,7 +66,7 @@ int main() {
       cout << "---Marino     4" << endl;
       cout << "Cuales registros quieres ver? " << endl;
       cin >> n;
-      Cuentafinal envio1;
+
       envio1.registro_envio();
 
       if (n == 1) {
@@ -83,6 +87,24 @@ int main() {
       if (n == 4) {
         cout << "\n\n ------Imprimir envios Marinos------" << endl;
         envio1.ver_envios("marino");
+      }
+    }
+
+    if (k == 3){
+      cout << "---Anime      1" << endl;
+      cout << "---Kpop       2" << endl;
+      cout << "Cual es tu eleccion? " << endl;
+      cin >> h;
+      if (h == 1){
+        cout << "\n\n ------Agregar registro de anime------" << endl;
+        cliente.agrega_anime("Jos", "A01707421", "USA", "Cosplay Law", "Anime", 2684, 1);
+        cliente.ver_registros("Anime");
+      }
+      
+      if (h == 2){
+        cout << "\n\n ------Agregar registro de kpop------" << endl;
+        cliente.agrega_kpop("Ren", "A01709824", "Chile", "Concierto the rose", "Kpop", 5600, 5);
+        cliente.ver_registros("Kpop");
       }
     }
 
