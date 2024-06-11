@@ -33,6 +33,8 @@ class Cuentafinal{
     void ver_envios();
     void ver_registros(string clase);
     void ver_envios(string metodo);
+    void agrega_kpop(string _nombre, string _id, string _pais, string _objeto, string _clase, int _precio, int _cantidad);
+    void agrega_anime(string _nombre, string _id, string _pais, string _objeto, string _clase, int _precio, int _cantidad);
 };
 
 /*
@@ -149,6 +151,36 @@ void Cuentafinal::ver_envios(string metodo){
       envio[i]->anadir_envio();
     }
   }
+}
+
+/*
+agrega_kpop agrega un cliente de la clase Kpop
+
+string ('_nombre', '_id', '_pais', '_objeto' o '_clase')
+int ('_precio' o '_cantidad')
+
+@param string: '_nombre', '_id', '_pais', '_objeto' o '_clase'
+@param int: '_precio' o '_cantidad'
+@return
+*/
+void Cuentafinal::agrega_kpop(string _nombre, string _id, string _pais, string _objeto, string _clase, int _precio, int _cantidad) {
+  cliente[no] = new Kpop(_nombre, _id, _pais, _objeto, _clase, _precio, _cantidad);
+  no++;
+}
+
+/*
+agrega_anime agrega un cliente de la clase Anime
+
+string ('_nombre', '_id', '_pais', '_objeto' o '_clase')
+int ('_precio' o '_cantidad')
+
+@param string: '_nombre', '_id', '_pais', '_objeto' o '_clase'
+@param int: '_precio' o '_cantidad'
+@return
+*/
+void Cuentafinal::agrega_anime(string _nombre, string _id, string _pais, string _objeto, string _clase, int _precio, int _cantidad){
+  cliente[no] = new Anime(_nombre, _id, _pais, _objeto, _clase, _precio, _cantidad);
+  no++;
 }
 
 #endif
